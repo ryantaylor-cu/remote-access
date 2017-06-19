@@ -4,6 +4,7 @@ teaching: 30
 exercises: 0
 questions:
 - "Can I run a job without being connected to the server?"
+- "Now that my job is running in the background, how do I control it?"
 objectives:
 - "First objective."
 keypoints:
