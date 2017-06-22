@@ -1,6 +1,6 @@
 ---
 title: "Running jobs in background"
-teaching: 30
+teaching: 15
 exercises: 0
 questions:
 - "Can I run a job without being connected to the server?"
@@ -11,7 +11,7 @@ keypoints:
 - "First key point."
 ---
 
-##Running Processes in the Background
+## Running Processes in the Background
 
 Sometimes if a job is going to take a long time to execute, we would like to run this process in the background. This allows us to have our job execute but still lets us have full control over our terminal. To run a job in the background, simply add an & to the end of the command line before executing it. For example:
 
@@ -33,7 +33,7 @@ To get a list of jobs running in the background, we use the `jobs` command. Each
 
 If you want to end a process that is running, you can use the `kill <ID>` command. The kill command takes a process ID as a parameter. This ID can be determined using the top command.
 
-##Redirecting Process Output to a File
+## Redirecting Process Output to a File
 
 Running certain programs cause a lot of information to be dumped to the console. Sometimes this is done so quickly that we cannot follow what is going on or we would like to save this output for later. To do this, we can use something called a redirect. This redirect causes the information normally dumped to your screen to be saved to a file. You do this by using ‘>’:
 command > results.txt
@@ -61,13 +61,13 @@ Finally, we can combine this with what we learned in the previous section to sen
 command 1> results.txt 2> errors.txt &
 ~~~
 
-##Using tmux to Run Commands in the Background
+## Using tmux to Run Commands in the Background
 
 It is possible to run Linux commands in the background.  You are able to disconnect from the Virtual Machine (VM) and connect later, and commands continue to run in the background.  This is useful if you need to run code that takes a long time.
 The tmux command on the Linux command-line allows you to do exactly this. Using tmux you can run commands on the VM, logout, and reconnect to your running programs later. You can tell that you are running tmux by the green bar along the bottom of your Linux command-line window.
 
 
-####Creating a new session
+#### Creating a new session
 
 This command will start a new tmux session.  You will see a new Linux command line that is running inside tmux.  Each tmux session has a name, so you can have different sessions, and reference them by their unique names.
 
@@ -75,7 +75,7 @@ This command will start a new tmux session.  You will see a new Linux command li
 tmux new -s example01
 ~~~
 
-####Leaving (detaching) a session
+#### Leaving (detaching) a session
 
 This leaves a session, but it will keep running so you can resume the session later. When you are in your tmux session, type:
 
@@ -83,7 +83,7 @@ This leaves a session, but it will keep running so you can resume the session la
 Ctrl-b followed by d
 ~~~
 
-####Listing sessions
+#### Listing sessions
 
 You can have more than one tmux session.  To see the list of running sessions, use this command:
 
@@ -91,7 +91,7 @@ You can have more than one tmux session.  To see the list of running sessions, u
 tmux ls
 ~~~
 
-####Resuming (attaching) a session
+#### Resuming (attaching) a session
 
 When you want to reconnect to a session that you have already started, use this command:
 
@@ -99,7 +99,7 @@ When you want to reconnect to a session that you have already started, use this 
 tmux attach -t example01
 ~~~
 
-####Stopping (killing) a session
+#### Stopping (killing) a session
 
 Once you are finished with a tmux session, you can get rid of it using this:
 

@@ -19,7 +19,7 @@ Your Virtual Machine (VM) has its own hard drive where your files and programs w
 
 ## Connection Instructions
 
-### Connecting through a RCS hosted VM
+### Connecting through an RCS hosted VM
 
 To connect your research drive, run this command on your VM:
 
