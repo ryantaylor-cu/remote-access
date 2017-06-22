@@ -1,6 +1,6 @@
 ---
 title: "Monitoring Resources"
-teaching: 30
+teaching: 15
 exercises: 0
 questions:
 - "What hardware resources are being used?"

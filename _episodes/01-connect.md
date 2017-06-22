@@ -1,6 +1,6 @@
 ---
 title: "Interacting with a server"
-teaching: 30
+teaching: 15
 exercises: 0
 questions:
 - "How to I get started with a Linux server?"
@@ -11,7 +11,7 @@ keypoints:
 - "scp copies files to and from the server."
 ---
 
-##Connecting to and Disconnecting from a Remote Computer
+## Connecting to and Disconnecting from a Remote Computer
 
 In this lesson we will show you how to connect to a remote computer and transfer data you would like to work on to this remote machine. To start, you should have a newly opened shell window on your computer. Currently you can use this terminal to interact with your computer. Since we want to work on a remote computer, we need to connect our sheel to that computer. To do this, we will use a tool called ssh (secure shell). This is a standard protocol used to securely connect to computers over a network. Generally speaking, you would use ssh in the following manner:
 
@@ -36,7 +36,7 @@ exit
 
 This will close the ssh connection and return your terminal to your own computer.
 
-##Copying Files to and from a Remote Computer
+## Copying Files to and from a Remote Computer
 
 Now that we know how to connect and disconnect from a remote computer, it is very likely that you would want to transfer files to the remote computer to process and then copy the results back to your computer. To do this we will use a standard tool called scp (secure copy). This tool works a lot like the standard unix tool cp (copy), which we expect you have used before. To copy a file from your computer to a remote computer, your scp command would look as follows:
 
