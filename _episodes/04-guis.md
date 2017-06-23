@@ -15,7 +15,7 @@ Mention here that they need to connect with -X. Tell them to ddisconnect and rec
 
 ## SPSS
 
-After you have connected to your RCDC virtual machine using ssh, run stata with this command:
+After you have connected to your RCDC virtual machine using ssh, run SPSS with this command:
 
 ~~~
 statistics
