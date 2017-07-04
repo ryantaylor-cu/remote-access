@@ -11,12 +11,38 @@ objectives:
 - "Display disk space usage."
 - "Examine how many CPU cores are being used."
 keypoints:
+- "Calculate available RAM by including buffered/cached"
+- "The `nice` command changes a process' priority."
 - "The `top` command shows an interactive display of hardware resources."
 - "The `ps` command shows a list of processes"
 - ""
 ---
 
 After you are able to connect to a server and run programs, it is often useful to know how much of the server your programs use.  And servers are often shared, so it is also useful to see what is available on the server. There are three types of server hardware resources to consider - disk space, RAM, and CPU.
+
+## Process
+
+We have seen how you can run commands in the Linux shell.  These commands are software programs, just like your web browser or word processor.  A running instance of a program is represented in Linux as a *process*.
+
+Things get more complicated when one software program makes use of multiple processes.  This allows the program to do more than one task at once
+
+> ## Threads vs Processes
+> 
+{: .callout}
+
+
+## CPU Usage
+
+The system load is a measure of how many processes 
+
+
+
+## Memory
+
+> <span class="glyphicon glyphicon-warning-sign"></span> **FIXME** I
+> guess we should expect students to know what RAM is, as well as
+> binary units such as MB and GB?
+{: .alert .alert-danger}
 
 >  <span class="glyphicon glyphicon-warning-sign"></span> **FIXME** Is
 >  it important to mention SWAP vs RAM, OS caching?
@@ -30,11 +56,10 @@ After you are able to connect to a server and run programs, it is often useful t
 >  multiple processes.  Students may also need to be aware that a
 >  process might not always use 100% of a core, e.g. if it is waiting
 >  for I/O from a disk
-
 {: .alert .alert-danger}
 
 >  <span class="glyphicon glyphicon-warning-sign"></span> **FIXME**
->  Can we rework the tasks below to organize them by task (finding a
+>  Can we rework the commands below to organize them by task (finding a
 >  particular process' RAM, then CPU vs finding those system-wide)?
 >  Or is it best to go through each command one at a time?
 {: .alert .alert-danger}
@@ -44,7 +69,7 @@ After you are able to connect to a server and run programs, it is often useful t
 {: .alert .alert-danger}
 
 
-
+* `nice`: Changes a process' priority
 * `top` or `htop`: Both top and htop gives you a dynamic, real-time view of all of the processes running on your system. There is a lot of data displayed for each process. Likely the most important information for you is the %CPU and %MEM details of the processes you are running. If you are running a multithreaded application, %CPU can go over 100%. The max %CPU will be the number of cores assigned to your VM (n) times 100%. If you notice your process (or sum of the CPU usage over you processes) are using close to n00% CPU, you are completely using all available cores. You need to also monitor %MEM. If this gets too high (ie. reaches 100%), your process will crash. If you notice that your process is slowly but continually using more memory it will likely crash eventually.
 * `ps <ID>`: Every process running on your system is given a unique ID. The ID assigned to each process is listed in the first column of the top output. This command gives more information on a specific running process.
 * `free -h`: This command gives a quick summary of the free and used memory across your VM. Including the option -h displays the output using human readable units.
