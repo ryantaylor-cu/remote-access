@@ -1,5 +1,5 @@
 ---
-title: "Using Research Storage"
+title: "Using research storage"
 teaching: 15
 exercises: 0
 questions:

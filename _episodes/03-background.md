@@ -1,5 +1,5 @@
 ---
-title: "Running jobs in background"
+title: "Jobs in the background"
 teaching: 15
 exercises: 0
 questions:

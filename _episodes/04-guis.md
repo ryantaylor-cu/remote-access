@@ -1,5 +1,5 @@
 ---
-title: "Running a Program Remotely with a GUI"
+title: "Running a program remotely with a GUI"
 teaching: 15
 exercises: 0
 questions:
