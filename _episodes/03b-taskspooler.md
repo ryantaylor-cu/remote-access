@@ -24,19 +24,21 @@ Only one job will run with `tsp` at a time.  However, you can ask `tsp` to run m
 ~~~
 $ tsp
 ~~~
-{. :bash}
+{: .bash}
+
 ~~~
 ID   State      Output               E-Level  Times(r/u/s)   Command [run=1/1]
 1    running    /tmp/ts-out.IiCgZe                           sleep 10
 0    finished   /tmp/ts-out.QUFZ40   0        2.00/0.00/0.00 sleep 2
 ~~~
-{. :output}
+{: .output}
 
 ## Running jobs with tsp
 
 Just put `tsp` in front of the command you want to run.  Note that `tsp` can only directly run a single command, but does not directly handle the special features of the Unix shell.  So if you run to use pipes, or run a sequence of commands as a single `tsp` job, then it is easiest to put those shell commands into a file.  This file is called a shell script.
 
 For example, let's look at the `countlines` shell script:
+
 ~~~
 $ nano countlines
 ~~~
@@ -51,7 +53,8 @@ $ tsp sleep 2
 $ tsp sleep 11
 $ tsp
 ~~~
-{. :bash}
+{: .bash}
+
 ~~~
 ID   State      Output               E-Level  Times(r/u/s)   Command [run=1/1]
 0    running    /tmp/ts-out.IiCgZe                           sleep 10
@@ -59,7 +62,7 @@ ID   State      Output               E-Level  Times(r/u/s)   Command [run=1/1]
 2    queued     (file)                                       sleep 2
 3    queued     (file)                                       sleep 11
 ~~~
-{. :output }
+{: .output }
 
 ## Inspecting results of jobs
 
@@ -68,7 +71,8 @@ Let's assume you have some finished `tsp` jobs:
 ~~~
 $ tsp
 ~~~
-{. :bash}
+{: .bash}
+
 ~~~
 ID   State      Output               E-Level  Times(r/u/s)   Command [run=0/1]
 0    finished   /tmp/ts-out.XIFxt5   0        10.00/0.00/0.00 sleep 10
@@ -76,7 +80,7 @@ ID   State      Output               E-Level  Times(r/u/s)   Command [run=0/1]
 2   finished   /tmp/ts-out.9PHhJZ   0        2.00/0.00/0.00 sleep 2
 3   finished   /tmp/ts-out.OuJkB4   0        11.00/0.00/0.00 sleep 11
 ~~~
-{. :output }
+{: .output }
 
 
 Note that `tsp` give each job an ID.  You can see the output of a job:
@@ -85,6 +89,7 @@ Note that `tsp` give each job an ID.  You can see the output of a job:
 $ tsp -c 1
 ~~~
 {: .bash}
+
 ~~~
 41511
 ~~~
@@ -96,6 +101,7 @@ And to see more detailed information about the job:
 $ tsp -i 1
 ~~~
 {: .bash }
+
 ~~~
 Exit status: died with exit code 0
 Command: bash countlines
@@ -110,16 +116,22 @@ Time run: 0.446569s
 ### Misc Commands
 
 Remove queued job with ID 2:
+
 ~~~
 $ tsp -r 2
 ~~~
+{: .bash}
 
 Clear list of finished jobs:
+
 ~~~
 $ tsp -C
 ~~~
+{: .bash}
 
 Kill running job:
+
 ~~~
 $ kill $(tsp -p 2)
 ~~~
+{: .bash}

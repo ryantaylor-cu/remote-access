@@ -26,6 +26,7 @@ To connect your research drive, run this command on your VM:
 ~~~
 connect-research-drive
 ~~~
+{: .bash}
 
 Once you have connected, your research storage drive will appear under a directory called `storage`.
 

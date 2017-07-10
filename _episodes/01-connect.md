@@ -14,7 +14,14 @@ keypoints:
 
 ## Connecting to and Disconnecting from a Remote Computer
 
-In this lesson we will show you how to connect to a remote computer and transfer data you would like to work on to this remote machine. To start, you should have a newly opened shell window on your computer. Currently you can use this terminal to interact with your computer. Since we want to work on a remote computer, we need to connect to a shell on that computer. To do this, we will use a command called ssh (secure shell). This is a standard protocol used to securely connect to computers over a network. Generally speaking, you would use ssh in the following manner:
+In this lesson we will show you how to connect to a remote computer and transfer 
+data you would like to work on to this remote machine. To start, you should have 
+a newly opened shell window on your computer. Currently you can use this terminal 
+to interact with your computer. Since we want to work on a remote computer, we 
+need to connect to a shell on that computer. To do this, we will use a command 
+called ssh (secure shell). This is a standard protocol used to securely connect 
+to computers over a network. Generally speaking, you would use ssh in the 
+following manner:
 
 ~~~
 $ ssh <remote-user-name>@<remote-computer-IP>
@@ -22,7 +29,11 @@ $ ssh <remote-user-name>@<remote-computer-IP>
 {: .bash}
 
 > ## Are you connected?
-> It can get confusing when you are switching between your own computer's shell and remote servers' shells.  All computers have a name that can be shown using the `hostname` command.  This lets you know what computer you are working on:
+>
+> It can get confusing when you are switching between your own computer's shell 
+> and remote servers' shells.  All computers have a name that can be shown using 
+> the `hostname` command.  This lets you know what computer you are working on:
+> 
 > ~~~
 > $ hostname
 > ~~~
@@ -74,6 +85,7 @@ $ scp <remote-user-name>@<remote-computer-IP>:<remote-path/remote-file> <local-p
 {: .bash}
 
 You can also copy entire directories, including all their contents, by adding the `-r` flag:
+
 ~~~
 $ scp <remote-user-name>@<remote-computer-IP>:<remote-path> <local-path>
 ~~~
@@ -90,11 +102,12 @@ The ~ at the end of the command is short hand for our home directory.
 
 > ## Connect to a server
 > If Jane wants to connect to her favourite RCDC server with address 192.0.2.26, which command should she use?
-> 1. `ssh jane 192.0.2.26`
-> 2. `scp jane@192.0.2.26:~ .`
-> 3. `ssh jane@192.0.2.26`
-> 4. `hostname 192.0.2.26`
-> 5. `ssh jane:192.0.2.26`
+> 
+> 1.  `ssh jane 192.0.2.26`
+> 2.  `scp jane@192.0.2.26:~ .`
+> 3.  `ssh jane@192.0.2.26`
+> 4.  `hostname 192.0.2.26`
+> 5.  `ssh jane:192.0.2.26`
 > 
 > > ## Solution
 > > The correct answer is 3. The `ssh` command will connect Jane to a shell on a remote server, and the `@` sign separates her name from the computer address.
@@ -103,10 +116,11 @@ The ~ at the end of the command is short hand for our home directory.
 
 > ## Finding where you are
 > You think you have used ssh to connect to a remote server, but you aren't sure.  Which of the following commands will show you what server you are connected to?
-> 1. `hostname`
-> 2. `whoami`
-> 3. `pwd`
-> 4. `computername`
+>
+> 1.  `hostname`
+> 2.  `whoami`
+> 3.  `pwd`
+> 4.  `computername`
 > 
 > > ## Solution
 > > 1. Yes: `hostname` will show the name of the computer you are currently interacting with.
@@ -118,6 +132,7 @@ The ~ at the end of the command is short hand for our home directory.
 
 > ## Copying Data
 > Assuming you do have access to remoteserver as user charlie, what is the error in this scp command?
+>
 > ~~~
 > $ mkdir mydirectory
 > $ scp mydirectory charlie@remoteserver:~
@@ -126,14 +141,17 @@ The ~ at the end of the command is short hand for our home directory.
 > 
 > > ## Solution
 > > If you run the above command, then you would get an error like this:
+> >
 > > ~~~
 > > mydirectory: not a regular file
 > > ~~~
 > > {: .error}
+> >
 > > To copy a directory, you must use the `-r` option:
+> > 
 > > ~~~
 > > $ scp -r mydirectory localhost:~
 > > ~~~
 > > {: .bash}
-> {: .solution}
+> {:` .solution}
 {: .challenge}
