@@ -1,5 +1,5 @@
 ---
-title: "Monitoring Resources"
+title: "Monitoring resources"
 teaching: 15
 exercises: 0
 questions:
