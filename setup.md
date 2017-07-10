@@ -4,7 +4,7 @@ title: Setup
 permalink: /setup/
 ---
 
-To be able to participate in this lesson you will need to install some software to be able to connect the the RCDC. 
+First you will need to download some data that will be used throughout the lesson. The zip file you will need can be found [here](https://github.com/ResearchComputingServices/remote-access/tree/gh-pages/data/data.zip). To be able to participate in this lesson you will need to install some software to be able to connect the the RCDC. 
 
 
 ### Connecting to Carleton's VPN
