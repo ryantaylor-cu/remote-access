@@ -54,10 +54,7 @@ We have seen how you can run commands in the Linux shell.  These commands are so
 
 In the `top` command's output, we can see a list of processes in the bottom section of the display.
 
-> ## Threads
-> A running instance of a program is a process.  But a process can only complete one task at once.  To do multiple tasks simultaneously, a process can have multiple threads.  Threads are like lightweight processes contained within the program.  Each CPU core run one of thread.  So for a single program to use multiple cores, you usually would expect it to use multithreading.
-{: .callout}
-
+Each process has a unique pid (process identifier).  We will occasionally need to use these numbers in other shell commands.
 
 ## CPU Usage
 
