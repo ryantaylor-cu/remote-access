@@ -33,7 +33,7 @@ Once you have installed X11, you will need to open a terminal window. To do this
 
 #### Linux Users
 
-To be able to participate in this lesson we will only need you to open a terminal window. If you do not know how to do this, either eimail your instructor before the lesson starts or ask when you arrive.
+To be able to participate in this lesson we will only need you to open a terminal window. If you do not know how to do this, either email your instructor before the lesson starts or ask when you arrive.
 
 
 

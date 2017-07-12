@@ -46,7 +46,7 @@ $
 
 When we do this it will launch command and immediately return us to the command prompt.  The process for this job will show up when running the `top` command.
 
-Once the job is done, we will see its output the next time the shell displays its prompt.  In the above example, we just pressed `Enter` after a few seconds, which displayed a new print as well as the job done message.
+Once the job is done, we will see its output the next time the shell displays its prompt.  In the above example, we just pressed `Enter` after a few seconds, which displayed a new prompt as well as the job done message.
 
 We can also see the shell's list of jobs by using the `jobs` command:
 
