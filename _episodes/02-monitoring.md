@@ -16,7 +16,6 @@ keypoints:
 - "The `df` command shows available disk space."
 - "The `nice` command changes a process' priority."
 - "The `ps` command shows a list of processes"
-- ""
 ---
 
 After you are able to connect to a server and run programs, it is often useful to know how much of the server your programs use.  And servers are often shared, so it is also useful to see what is available on the server. There are three types of server hardware resources to consider - disk space, RAM, and CPU.
@@ -60,9 +59,9 @@ Each process has a unique pid (process identifier).  We will occasionally need t
 
 The system load is a measure of how many processes are running and how computationally intensive those tasks are. The amount of processing power you have will depend on the type of processor in the machine you are using. In all likelihood your computer has a multicore CPU. These factors are important in determining the current load on a given machine and whether you are able to take advantage of any available resources.
 
-In the `top` output, you will see a line in the top summary for '#Cpu(s)'.  This indicates the average CPU use over the last few seconds.  It is the percentage used of all CPUs combined, so it will range from 0% to 100%.  This will show you how many CPU cores would be available if you are about to start a program.
+In the `top` output, you will see a line in the top summary for '#Cpu(s)'.  This indicates the average CPU use over the last few seconds.  It is the percentage used of all CPUs combined, so it will range from 0% to 100%.  One of the numbers is 'id', which means idle.  This percentage multiplied by the number of cores will indicate how many CPU cores are available if you were about to start a program.
 
-Let's run the `userres` example program to see how we can monitor an individual process' CPU use.
+Now let's run the `userres` example program to see how to monitor an individual process' CPU use.
 
 ~~~
 $ ./useres -c 2
@@ -120,7 +119,7 @@ $ nice ./useres -c 4
 ~~~
 {: .bash}
 
-The `nice` command will change a process' priority by increasing its `nice` value.  You can see process' nice values in the 'NI' column of top.
+The `nice` command will lower a process' priority by increasing its `nice` value.  You can see process' nice values in the 'NI' column of top.
 
 ## Process Status command
 
