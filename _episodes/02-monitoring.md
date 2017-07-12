@@ -127,7 +127,7 @@ The `nice` command will change a process' priority by increasing its `nice` valu
 The `ps` command will show you a list of your processes, similar to the process list in the `top` command's display:
 
 ~~~
-$ ps u
+$ ps ux
 ~~~
 {: .bash}
 ~~~
