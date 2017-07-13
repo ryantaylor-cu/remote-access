@@ -36,8 +36,8 @@ KiB Mem :  7980368 total,   216248 free,  1120544 used,  6643576 buff/cache
 KiB Swap:        0 total,        0 free,        0 used.  6487508 avail Mem
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
-23097 ryantay+  20   0 1071500 1.001g   1444 S 200.0 13.2   0:14.43 useres
-23100 ryantay+  20   0   40524   3660   3044 R   0.3  0.0   0:00.01 top
+23097 jane      20   0 1071500 1.001g   1444 S 200.0 13.2   0:14.43 useres
+23100 jane      20   0   40524   3660   3044 R   0.3  0.0   0:00.01 top
     1 root      20   0   37764   5736   3908 S   0.0  0.1   0:25.26 systemd
     2 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kthreadd
     3 root      20   0       0      0      0 S   0.0  0.0   0:00.16 ksoftirqd/0
