@@ -110,7 +110,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ~~~
 {: .output}
 
-The disk usage command will tell you how much disk space your files are using within a given directory:
+Additionally, the disk usage command will tell you how much disk space your files are using within a given directory:
 
 ~~~
 du -hsx ~
