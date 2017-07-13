@@ -110,6 +110,18 @@ Filesystem      Size  Used Avail Use% Mounted on
 ~~~
 {: .output}
 
+The disk usage command will tell you how much disk space your files are using within a given directory:
+
+~~~
+du -hsx ~
+~~~
+{: .bash}
+~~~
+1.9G	/home/jane
+~~~
+{: .output}
+
+
 ## Playing nicely with other users
 
 You may want to run a program that takes long time and uses most of the CPU cores in your server.  If other users may need to run smaller programs at the same time, it is polite to lower your program's priority.  This will cause your program to slow down a bit more than the other user's.
