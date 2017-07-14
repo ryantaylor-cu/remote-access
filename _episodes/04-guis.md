@@ -5,9 +5,10 @@ exercises: 0
 questions:
 - "How can I run a program on a remote computer but still use the graphical user interface that I'm used to?"
 objectives:
-- "First objective."
+- "Setup an ssh connection to allow remote GUI programs"
+- "Run a GUI program"
 keypoints:
-- "First key point."
+- "The ssh `-X` option allows us to run remote GUI programs"
 ---
 
 
@@ -28,20 +29,20 @@ For your reference, here are a few other GUI applications that you might have ac
 ### SPSS
 
 ~~~
-statistics
+statistics &
 ~~~
 {: .bash}
 
 ### STATA
 
 ~~~
-xstata
+xstata &
 ~~~
 {: .bash}
 
 ### Matlab
 
 ~~~
-matlab
+matlab &
 ~~~
 {: .bash}

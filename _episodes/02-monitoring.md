@@ -8,8 +8,8 @@ objectives:
 - "Understand the computing concept of a process"
 - "Differentiate types of RAM use"
 - "Understand used and available RAM."
-- "Display disk space usage."
-- "Examine how many CPU cores are being used."
+- "Display disk space usage"
+- "Examine how many CPU cores are being used"
 keypoints:
 - "The `top` command shows an interactive display of hardware resources."
 - "The `free` command shows memory use."

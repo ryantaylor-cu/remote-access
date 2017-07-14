@@ -3,11 +3,12 @@ title: "Managing jobs with a queue"
 teaching: 15
 exercises: 0
 questions:
-- "How can I easily control a list of waiting jobs?"
+- "How can I more easily control many background jobs?"
 objectives:
-- "First objective."
+- "Create a queue of waiting jobs"
+- "Manage a queue of jobs"
 keypoints:
-- "First key point."
+- "The `tsp` program, if available, will schedule a queue of jobs."
 ---
 
 ## Overview

@@ -6,9 +6,15 @@ questions:
 - "Can I run a job without being connected to the server?"
 - "Now that my job is running in the background, how do I control it?"
 objectives:
-- "First objective."
+- "Understand background jobs"
+- "Manage background jobs"
+- "Run jobs when disconnect from a server."
 keypoints:
-- "First key point."
+- "Ending a command with `&` puts it in the background."
+- "Starting a command with `nohup` keeps the job running while logged out."
+- "Redirection with `>` allows you to save program output to files."
+- "The `jobs` command lists background jobs."
+- "The `kill` command stops a background process."
 ---
 
 ## Shell Jobs
@@ -28,7 +34,7 @@ Sometimes if a job is going to take a long time to execute, we would like to run
 To run a job in the background, simply add an `&` to the end of the command line before executing it. For example:
 
 ~~~
-$ sleep 20 &
+$ sleep 5 &
 ~~~
 {: .bash}
 ~~~
