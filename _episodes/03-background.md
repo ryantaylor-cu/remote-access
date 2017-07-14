@@ -19,7 +19,7 @@ keypoints:
 
 ## Shell Jobs
 
-We have now seen that a running program shows up as a process.  You may recall that you can run one shell command that connects programs together using pipes.  A job is this collection of processes that results from the shell command.
+We have now seen that a running program shows up as a process.  You may recall that you can run one shell command that connects programs together using pipes.  A job is the collection of processes that results from the shell command.
 
 The shell is able to do something called job control.  We can actually have more than one background job running at once.
 
