@@ -31,10 +31,10 @@ When you are running a background job, it runs without taking control of your sh
 
 Sometimes if a job is going to take a long time to execute, we would like to run this job in the background. This allows us to have our job execute but still lets us have full control over our shell.
 
-To run a job in the background, simply add an `&` to the end of the command line before executing it. For example:
+To run a job in the background, simply add an `&` to the end of the command line before executing it. For example, we can run out `run_simulation` program for 5 seconds in the background as follows:
 
 ~~~
-$ sleep 5 &
+$ ./run_simulation -t 5 &
 ~~~
 {: .bash}
 ~~~
@@ -46,7 +46,7 @@ $
 ~~~
 {: .bash}
 ~~~
-[1]+  Done                    sleep 2
+[1]+  Done                    ./run_simulation -t 5 &
 ~~~
 {: .output}
 
@@ -57,21 +57,21 @@ Once the job is done, we will see its output the next time the shell displays it
 We can also see the shell's list of jobs by using the `jobs` command:
 
 ~~~
-$ sleep 20 &
-$ sleep 18 &
+$ ./run_simulation -t 20 &
+$ ./run_simulation -t 18 &
 $ jobs
 ~~~
 {: .bash}
 ~~~
-[1]-  Running                 sleep 20 &
-[2]+  Running                 sleep 18 &
+[1]-  Running                 ./run_simulation -t 20 &
+[2]+  Running                 ./run_simulation -t 18 &
 ~~~
 {: .output }
 
 If you have already started a job and want to relegate it to the background, press the *Control* and *Z* keys together. This will suspend the job. When you follow this by `bg` it will have it run in the background:
 
 ~~~
-$ sleep 20
+$ ./run_simulation -t 20
 <CTRL-Z>
 $ bg
 ~~~
@@ -89,31 +89,31 @@ If the job is your current foreground job, you can end it by pressing the `CTRL-
 
 Running certain programs cause a lot of information to be dumped to the console. Sometimes this is done so quickly that we cannot follow what is going on or we would like to save this output for later. To do this, we can use something called a redirect. This redirect causes the information normally dumped to your screen to be saved to a file. You do this by using the `>` symbol.
 
-This will save the output of command to results.txt. This is great, however there are actually two sets of outputs being produced here. The first is the regular output produced by command (known are stdout) as well as all of the errors produced (known as stderr). These “output streams” are normally dumped to the same location so the end user does not know where a given line came from. Sometimes it is useful to separate the stdout from the stderr. We can redirect either of these streams to a file by identifying them with ‘1’ (stdout) or ‘2’ (stderr). For example, if we want to save the stdout to a file and have the errors print to screen, we would do the following:
+This will save the output of command to results.txt. This is great, however there are actually two sets of outputs being produced here. The first is the regular output produced by command (known are stdout) as well as all of the errors produced (known as stderr). These “output streams” are normally dumped to the same location so the end user does not know where a given line came from. Sometimes it is useful to separate the stdout from the stderr. We can redirect either of these streams to a file by identifying them with ‘1’ (stdout) or ‘2’ (stderr). To illustrate this we can use our `run_simulation` program again, giving it the -o option. This will tell it to print all of the simulation output to the screen. For example, if we want to save the stdout to a file and have the errors print to screen, we would do the following:
 
 ~~~
-$ ./slowoutput 1> results.txt
+$ ./run_simulation -o 1> results.txt
 ~~~
 {: .bash}
 
 On the other hand, if we would like to print the stdout to screen and save the errors to a file, we would do the following:
 
 ~~~
-$ ./slowoutput 2> errors.txt
+$ ./run_simulation -o 2> errors.txt
 ~~~
 {: .bash}
 
 If we want to save both streams to separate files, we would do the following:
 
 ~~~
-$ ./slowoutput 1> results.txt 2> errors.txt
+$ ./run_simulation -o 1> results.txt 2> errors.txt
 ~~~
 {: .bash}
 
 Finally, we can combine this with what we learned in the previous section to send this job to the background:
 
 ~~~
-$ ./slowoutput 1> results.txt 2> errors.txt &
+$ ./run_simulation 1> results.txt 2> errors.txt &
 ~~~
 {: .bash}
 
@@ -124,6 +124,6 @@ Running jobs in the background a useful way to run many long programs at once.  
 To run a job that can be disconnected from your shell, you should to do two things.  First, tell your job to ignore any disconnect ("hangup" or HUP) signals from your shell using the nohup command.  Second, redirect your output to a file for later viewing.  For example:
 
 ~~~
-$ nohup ./slowoutput 300 > results.txt 2> errors.txt &
+$ nohup ./run_simulation -o -t 300 > results.txt 2> errors.txt &
 ~~~
 {: .bash}

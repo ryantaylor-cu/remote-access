@@ -47,24 +47,24 @@ The number from the ID column will be used to refer to particular jobs.  The Sta
 
 Just put `tsp` in front of the command you want to run.  Note that `tsp` can only directly run a single command, but itself does not handle the special functionality of the Unix shell.  So for example if use a command containing pipes or output redirects, then it is easiest to put those shell commands into a file.  This file is called a shell script, but is out of the scope of our current discussion.
 
-Let's again run the `slowoutput` example program, but this time run it using `tsp`:
+Let's again run the `run_simulation` example program, but this time run it using `tsp`:
 
 ~~~
-$ tsp ./slowoutput 10
-$ tsp ./slowoutput 3
-$ tsp ./slowoutput 20
+$ tsp ./run_simulation -t 10
+$ tsp ./run_simulation -t 3
+$ tsp ./run_simulation -t 20
 $ tsp
 ~~~
 {: .bash}
 ~~~
 ID   State      Output               E-Level  Times(r/u/s)   Command [run=1/1]
-0    running    /tmp/ts-out.Smoz2i                           ./slowoutput 10
-1    queued     (file)                                       ./slowoutput 3
-2    queued     (file)                                       ./slowoutput 20
+0    running    /tmp/ts-out.Smoz2i                           ./run_simulation -t 10
+1    queued     (file)                                       ./run_simulation -t 3
+2    queued     (file)                                       ./run_simulation -t 20
 ~~~
 {: .output }
 
-We have queued up 3 jobs, each running a slowoutput.  We'll move on now to ways of managing jobs and getting output.
+We have queued up 3 jobs, each running a `run_simulation`.  We'll move on now to ways of managing jobs and getting output.
 
 
 ## Inspecting results of jobs
@@ -77,9 +77,9 @@ $ tsp
 {: .bash}
 
 ~~~
-0    finished   /tmp/ts-out.Smoz2i   0        10.04/0.00/0.00 ./slowoutput 10
-1    finished   /tmp/ts-out.1UDMiN   0        3.02/0.00/0.00 ./slowoutput 3
-2    finished   /tmp/ts-out.twnIHU   0        20.11/0.00/0.00 ./slowoutput 20
+0    finished   /tmp/ts-out.Smoz2i   0        10.04/0.00/0.00 ./run_simulation -t 10
+1    finished   /tmp/ts-out.1UDMiN   0        3.02/0.00/0.00  ./run_simulation -t 3
+2    finished   /tmp/ts-out.twnIHU   0        20.11/0.00/0.00 ./run_simulation -t 20
 ~~~
 {: .output }
 
@@ -91,14 +91,8 @@ $ tsp -c 1
 ~~~
 {: .bash}
 ~~~
-Example Output 3
-Example Error 3
-Example Output 2
-Example Error 2
-Example Output 1
-Example Error 1
-DONE Output
-DONE Error
+Using 0 MB of RAM
+Using 0 CPU cores
 ~~~
 {: .output}
 
@@ -111,7 +105,7 @@ $ tsp -i 1
 
 ~~~
 Exit status: died with exit code 0
-Command: ./slowoutput 3
+Command: ./run_simulation -t 3
 Slots required: 1
 Enqueue time: Fri Jul 14 10:45:28 2017
 Start time: Fri Jul 14 10:45:38 2017

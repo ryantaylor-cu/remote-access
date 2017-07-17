@@ -36,7 +36,7 @@ KiB Mem :  7980368 total,   216248 free,  1120544 used,  6643576 buff/cache
 KiB Swap:        0 total,        0 free,        0 used.  6487508 avail Mem
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
-23097 jane      20   0 1071500 1.001g   1444 S 200.0 13.2   0:14.43 useres
+23097 jane      20   0 1071500 1.001g   1444 S 200.0 13.2   0:14.43 run_simulation 
 23100 jane      20   0   40524   3660   3044 R   0.3  0.0   0:00.01 top
     1 root      20   0   37764   5736   3908 S   0.0  0.1   0:25.26 systemd
     2 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kthreadd
@@ -57,18 +57,51 @@ Each process has a unique pid (process identifier).  We will occasionally need t
 
 ## CPU Usage
 
-The system load is a measure of how many processes are running and how computationally intensive those tasks are. The amount of processing power you have will depend on the type of processor in the machine you are using. In all likelihood your computer has a multicore CPU. These factors are important in determining the current load on a given machine and whether you are able to take advantage of any available resources.
-
-In the `top` output, you will see a line in the top summary for '#Cpu(s)'.  This indicates the average CPU use over the last few seconds.  It is the percentage used of all CPUs combined, so it will range from 0% to 100%.  One of the numbers is 'id', which means idle.  This percentage multiplied by the number of cores will indicate how many CPU cores are available if you were about to start a program.
-
-Now let's run the `userres` example program to see how to monitor an individual process' CPU use.
+The system load is a measure of how many processes are running and how computationally intensive those tasks are. The amount of processing power you have will depend on the type of processor in the machine you are using. In all likelihood your computer has a multicore CPU. These factors are important in determining the current load on a given machine and whether you are able to take advantage of any available resources. To get a summary of the CPUs available on your current machine, use the command `lscpu`.
 
 ~~~
-$ ./useres -c 2
+lscpu
 ~~~
 {: .bash}
 
-In top's listing of processes, you should see a `useres` process that is using 200% CPU.  For processes, the %CPU is the percentage of a single core being used.  So 200% indicates that rougly 2 cores are being used, on average.
+~~~
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             4
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 60
+Model name:            Intel Core Processor (Haswell, no TSX)
+Stepping:              1
+CPU MHz:               2294.470
+BogoMIPS:              4588.94
+Virtualization:        VT-x
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              4096K
+NUMA node0 CPU(s):     0-3
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm tpr_shadow vnmi flexpriority ept fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+~~~
+{: .output}
+
+This summary gives us more information than we need at this point, but importantly it tells us how many CPU cores there are and their speed. In this example we see the machine has 4 available CPUs, each of which are roughly 2.3 2.3GHz. Looking back to the `top` output, you will see a line in the top summary for '#Cpu(s)'.  This indicates the average CPU use over the last few seconds.  It is the percentage used of all CPUs combined, so it will range from 0% to 100%.  One of the numbers is 'id', which means idle.  This percentage multiplied by the number of cores will indicate how many CPU cores are available if you were about to start a program.
+
+Now let's run the `run_simulation` example program to see how to monitor an individual process' CPU use.
+
+~~~
+$ ./run_simulation -c 2
+~~~
+{: .bash}
+
+In top's listing of processes, you should see a `run_simulation` process that is using 200% CPU.  For processes, the %CPU is the percentage of a single core being used.  So 200% indicates that rougly 2 cores are being used, on average.
 
 ## Memory
 
@@ -88,11 +121,11 @@ This `free` command gives a quick summary of the free and used memory across you
 Back in the `top` display, we see a '%MEM' column for each process.  If we run this example command:
 
 ~~~
-./useres -m 1000
+./run_simulation -m 1000
 ~~~
 {: .bash}
 
-It might be easier to see the useres if we sort by memory used.  Do this by pressing `M`.  You can go back to the default CPU sort by pressing `P`.
+It might be easier to see the run_simulation if we sort by memory used.  Do this by pressing `M`.  You can go back to the default CPU sort by pressing `P`.
 
 ## Disk Space
 
@@ -127,7 +160,7 @@ du -hsx ~
 You may want to run a program that takes long time and uses most of the CPU cores in your server.  If other users may need to run smaller programs at the same time, it is polite to lower your program's priority.  This will cause your program to slow down a bit more than the other user's.
 
 ~~~
-$ nice ./useres -c 4
+$ nice ./run_simulation -c 4
 ~~~
 {: .bash}
 
@@ -145,7 +178,7 @@ $ ps ux
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 jane     22825  0.2  0.0  21396  5248 pts/0    Ss   14:06   0:00 -bash
 jane     22875  0.2  0.0  21468  5436 pts/1    Ss   14:06   0:00 -bash
-jane     22920  176 13.1 1071500 1050084 pts/1 Sl+  14:07   0:14 ./useres -c 2 -m 1024
+jane     22920  176 13.1 1071500 1050084 pts/1 Sl+  14:07   0:14 ./run_simulation -c 2 -m 1024
 jane     22926  0.0  0.0  36088  3316 pts/0    R+   14:07   0:00 ps u
 ~~~
 {: .output}
