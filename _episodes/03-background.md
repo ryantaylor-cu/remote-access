@@ -110,7 +110,14 @@ $ ./run_simulation -o 1> results.txt 2> errors.txt
 ~~~
 {: .bash}
 
-Finally, we can combine this with what we learned in the previous section to send this job to the background:
+We can also use the special symbol '&1', which indicates the file that we are sending stdout to.  This symbol can be used to direct both errors and regular output to the same file:
+
+~~~
+$ ./run_simulation -o 1> output.txt 2>&1
+~~~
+{: .bash}
+
+Finally, we can combine this with what we learned in the previous section to save a background job's output:
 
 ~~~
 $ ./run_simulation 1> results.txt 2> errors.txt &
