@@ -134,3 +134,19 @@ Kill running job:
 $ kill $(tsp -p 2)
 ~~~
 {: .bash}
+
+> ## Using Taskspooler 
+> Let's assume you have 5 processes scheduled using `tsp`. How do you:
+>
+> 1. get more information about the job with ID 2?
+> 2. see the output of job with ID 1?
+> 3. list all scheduled jobs?
+> 4. remove queued job with ID 4?
+> 
+> > ## Solution
+> > 1. tsp -i 2
+> > 2. tsp -c 1
+> > 3. tsp
+> > 4. tsp -r 4
+> {: .solution}
+{: .challenge}

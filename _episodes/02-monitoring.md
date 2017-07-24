@@ -182,3 +182,27 @@ jane     22920  176 13.1 1071500 1050084 pts/1 Sl+  14:07   0:14 ./run_simulatio
 jane     22926  0.0  0.0  36088  3316 pts/0    R+   14:07   0:00 ps u
 ~~~
 {: .output}
+
+> ## Running out of memory? 
+> You are concerned that some running processes are taking up too much memory and it will affect your ability to run your program. What tool(s) can you use to assess the situation?
+> 
+> > ## Solution
+> > `top` will give you a summary of all of the processes currently running, along with the amount of memory currently being used by each process. `free` will give you a siummary of the current memory use and how much memory is available. 
+> {: .solution}
+{: .challenge}
+
+> ## Checking disk space
+> Which tool would you use to determine how much free space is available on the local hard disk?
+> 
+> 1. `ps`
+> 2. `free`
+> 3. `du`
+> 4. `df` 
+>
+> > ## Solution
+> > 1. No: `ps` aka 'process status' gives you information about running processes, not disk space.
+> > 2. No: `free` displays the amount of free and used memory (not disk space) in the system.
+> > 3. No: `du` gives an estimated file soze for a specified file or folder, it will not tell you how much space is remamning.
+> > 4. Yes: `df` will report the total used and available space (among other things) on every disk in the machine.
+> {: .solution}
+{: .challenge}

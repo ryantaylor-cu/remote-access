@@ -134,3 +134,22 @@ To run a job that can be disconnected from your shell, you should to do two thin
 $ nohup ./run_simulation -o -t 300 > results.txt 2> errors.txt &
 ~~~
 {: .bash}
+
+> ## Killing a process
+> You have started a process and sent it to run in the background before realizing you need to kill it. How do you go about doing so?
+> 
+> > ## Solution
+> > First you will need to derteming the process' ID. To do this you could use `top` or `ps`. With this ID, you can then execute the `kill <ID>` command.
+> {: .solution}
+{: .challenge}
+
+> ## Running run_simulation and storing the output
+> We would like to run `run_simulation` for 10 seconds, store the output in a file called `output.txt`, the errors in a file called `ignore.txt` and have it run in the background. What command should be entered?
+>
+> > ## Solution
+> > ~~~
+> > ./run_simulation -t 10 -o 1> output.txt 2> ignore.txt &
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
