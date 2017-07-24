@@ -92,7 +92,7 @@ Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca 
 ~~~
 {: .output}
 
-This summary gives us more information than we need at this point, but importantly it tells us how many CPU cores there are and their speed. In this example we see the machine has 4 available CPUs, each of which are roughly 2.3 2.3GHz. Looking back to the `top` output, you will see a line in the top summary for '#Cpu(s)'.  This indicates the average CPU use over the last few seconds.  It is the percentage used of all CPUs combined, so it will range from 0% to 100%.  One of the numbers is 'id', which means idle.  This percentage multiplied by the number of cores will indicate how many CPU cores are available if you were about to start a program.
+This summary gives us more information than we need at this point, but importantly it tells us how many CPU cores there are and their speed. In this example we see the machine has 4 available CPUs, each of which are roughly 2.3GHz. Looking back to the `top` output, you will see a line in the top summary for '#Cpu(s)'.  This indicates the average CPU use over the last few seconds.  It is the percentage used of all CPUs combined, so it will range from 0% to 100%.  One of the numbers is 'id', which means idle.  This percentage multiplied by the number of cores will indicate how many CPU cores are available if you were about to start a program.
 
 Now let's run the `run_simulation` example program to see how to monitor an individual process' CPU use.
 
