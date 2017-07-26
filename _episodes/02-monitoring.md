@@ -6,8 +6,8 @@ questions:
 - "What hardware resources are being used?"
 objectives:
 - "Understand the computing concept of a process"
-- "Differentiate types of RAM use"
-- "Understand used and available RAM."
+- "Differentiate types of memory use"
+- "Understand used and available memory."
 - "Display disk space usage"
 - "Examine how many CPU cores are being used"
 keypoints:
@@ -18,7 +18,7 @@ keypoints:
 - "The `ps` command shows a list of processes"
 ---
 
-After you are able to connect to a server and run programs, it is often useful to know how much of the server your programs use.  And servers are often shared, so it is also useful to see what is available on the server. There are three types of server hardware resources to consider - disk space, RAM, and CPU.
+After you are able to connect to a server and run programs, it is often useful to know how much of the server your programs use.  And servers are often shared, so it is also useful to see what is available on the server. There are three types of server hardware resources to consider - disk space, memory, and CPU.
 
 Let's start by looking at the `top` command.  This is an interactive command that show what is currently running on your server, as well as how much memory and CPU is being used.
 
@@ -105,7 +105,7 @@ In top's listing of processes, you should see a `run_simulation` process that is
 
 ## Memory
 
-Another major aspect to consider when monitoring the load of a given computer is the amount of used and free memory. Every process uses a variable amount of memory and can only function efficiently when there is enough free memory for them to use. Besides the real memory, the computer can also use *virtual memory*, a combination of real memory and disk space. The portion of virtual memory that uses the disk is known as swap space. When the computer has to resort to using the hard drive in place of memory, the performance of the system drops considerably due to the fact that the disk is orders of magnitude slower than memory. It is for this reason that monitoring your memory usage (and ensuring you do not run out) is important.
+Another major aspect to consider when monitoring the load of a given computer is the amount of used and free memory. Memory, or RAM, is where processes and their data are kept while running.  Every process uses a variable amount of memory and can only function efficiently when there is enough free memory for them to use. Besides the real memory, the computer can also use *virtual memory*, a combination of real memory and disk space. The portion of virtual memory that uses the disk is known as swap space. When the computer has to resort to using the hard drive in place of memory, the performance of the system drops considerably due to the fact that the disk is orders of magnitude slower than memory. It is for this reason that monitoring your memory usage (and ensuring you do not run out) is important.
 
 To see how much memory is available, we can return to the `top` program's display.  The 'KiB memory' and 'KiB swap' lines describe memory use.  You can see how much memory you have in the 'total' number.  The 'avail mem' number shows the number of kilobytes of memory that would is available to processes.  This is not the same as the 'free' number, which does not take into account the memory used by Linux itself.
 
