@@ -34,9 +34,9 @@ $ tsp
 
 ~~~
 ID   State      Output               E-Level  Times(r/u/s)   Command [run=1/1]
-1    running    /tmp/ts-out.IiCgZe                           sleep 10
-2    queued     (file)                                       sleep 10
-0    finished   /tmp/ts-out.QUFZ40   0        2.00/0.00/0.00 sleep 2
+1    running    /tmp/ts-out.IiCgZe                           ./run_simulation -t 10
+2    queued     (file)                                       ./run_simulation -t 10
+0    finished   /tmp/ts-out.QUFZ40   0        2.00/0.00/0.00 ./run_simulation -t 2
 ~~~
 {: .output}
 
