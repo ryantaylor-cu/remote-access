@@ -136,7 +136,7 @@ $ kill $(tsp -p 2)
 {: .bash}
 
 > ## Using Taskspooler 
-> Let's assume you have 5 processes scheduled using `tsp`. How do you:
+> Let's assume you have 5 jobs scheduled using `tsp`. How do you:
 >
 > 1. get more information about the job with ID 2?
 > 2. see the output of job with ID 1?
