@@ -139,7 +139,7 @@ $ nohup ./run_simulation -o -t 300 > results.txt 2> errors.txt &
 > You have started a process and sent it to run in the background before realizing you need to kill it. How do you go about doing so?
 > 
 > > ## Solution
-> > First you will need to derteming the process' ID. To do this you could use `top` or `ps`. With this ID, you can then execute the `kill <ID>` command.
+> > First you will need to determine the process' ID. To do this you could use `top` or `ps`. With this ID, you can then execute the `kill <ID>` command.
 > {: .solution}
 {: .challenge}
 
