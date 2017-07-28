@@ -69,7 +69,7 @@ We have queued up 3 jobs, each running a `run_simulation`.  We'll move on now to
 
 ## Inspecting results of jobs
 
-Let's assume you have some finished `tsp` jobs, that looks like this:
+Let's assume you have some finished `tsp` jobs that look like this:
 
 ~~~
 $ tsp
@@ -84,7 +84,7 @@ $ tsp
 {: .output }
 
 
-Note that `tsp` give each job an ID.  You can see the output of a job:
+Note that `tsp` gives each job an ID.  You can see the output of a job:
 
 ~~~
 $ tsp -c 1
