@@ -22,6 +22,15 @@ local$ ssh -X jane@192.0.2.5
 server$ gedit &
 ~~~
 
+> ## When in doubt, use ssh -X 
+>
+> When connecting to a remote server on which you would like to run programs with GUIs, it is best to use the -X option as this provides the most secure connection. However, security settings on different computers vary and it is possible that the remote machine will not be trusted to forward the program's GUI over the ssh connection. If this is the case, we can force our computer to trust the remote machine by replacing the -X option with the -Y option. If you find that -X doesn't work then do the following:
+>
+> ~~~
+> ssh -Y jane@192.0.2.5
+> ~~~
+{: .callout}
+
 ## Examples of other graphical applications
 
 For your reference, here are a few other GUI applications that you might have access to at Carleton University:
