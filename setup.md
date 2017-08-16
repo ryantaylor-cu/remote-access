@@ -11,7 +11,7 @@ To be able to participate in this lesson you will need to install some software 
 
 ### Connecting to Carleton's VPN
 
-TO be able to connect to the RCDC from your laptop (using wifi) or from outside of campus, you will need to connect to Carleton's VPN. Full instructions on how to do this can be found [here](https://carleton.ca/its/help-centre/remote-access/). 
+To be able to connect to the RCDC from your laptop (using wifi) or from outside of campus, you will need to connect to Carleton's VPN. Full instructions on how to do this can be found [here](https://carleton.ca/its/help-centre/remote-access/). 
 
 
 ### Preparing your computer to connect to the RCDC
@@ -21,7 +21,7 @@ Depending on the operating system on your computer you will have to do certain t
 
 #### Windows 10 Users
 
-TO be able to participate in this lesson we will need you ti install some software to give you access to a command shell. MobaXTerm is a powerful terminal program for Windows. It allows you to use Linux commands on a Windows PC, to remotely connect your RCDC Virtual Machine (VM), transfer files, and even to remotely run graphical programs on your VM. The free Home Edition of MobaXterm can be found [here](http://mobaxterm.mobatek.net/download.html).
+To be able to participate in this lesson we will need you to install some software to give you access to a command shell. MobaXTerm is a powerful terminal program for Windows. It allows you to use Linux commands on a Windows PC, to remotely connect your RCDC Virtual Machine (VM), transfer files, and even to remotely run graphical programs on your VM. The free Home Edition of MobaXterm can be found [here](http://mobaxterm.mobatek.net/download.html).
 
 Once you have installed MobaXTerm, run the program. In the top left corner click Sesson and then click the big button in the middle that reads "Start local terminal". Once you have gotten to this point you are ready to participate in the lesson.
 
