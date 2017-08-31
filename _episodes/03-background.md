@@ -120,7 +120,7 @@ $ ./run_simulation -o 1> output.txt 2>&1
 Finally, we can combine this with what we learned in the previous section to save a background job's output:
 
 ~~~
-$ ./run_simulation 1> results.txt 2> errors.txt &
+$ ./run_simulation -o 1> results.txt 2> errors.txt &
 ~~~
 {: .bash}
 
