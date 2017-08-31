@@ -60,7 +60,7 @@ Each process has a unique pid (process identifier).  We will occasionally need t
 The system load is a measure of how many processes are running and how computationally intensive those tasks are. The amount of processing power you have will depend on the type of processor in the machine you are using. In all likelihood your computer has a multicore CPU. These factors are important in determining the current load on a given machine and whether you are able to take advantage of any available resources. To get a summary of the CPUs available on your current machine, use the command `lscpu`.
 
 ~~~
-lscpu
+$ lscpu
 ~~~
 {: .bash}
 
@@ -112,7 +112,7 @@ To see how much memory is available, we can return to the `top` program's displa
 The same information about memory can be seen by running this shell command to use 500MB of memory:
 
 ~~~
-free -h
+$ free -h
 ~~~
 {: .bash}
 
@@ -121,7 +121,7 @@ This `free` command gives a quick summary of the free and used memory across you
 Back in the `top` display, we see a '%MEM' column for each process.  If we run this example command:
 
 ~~~
-./run_simulation -m 1000
+$ ./run_simulation -m 1000
 ~~~
 {: .bash}
 
@@ -134,7 +134,7 @@ The last resource it is important to monitor is the amount of free disk space. W
 The disk free command gives a quick usage summary of the available disk storage. An intervention should be made if you notice any listed volume approaching 100% usage.
 
 ~~~
-df -h ~
+$ df -h ~
 ~~~
 {: .bash}
 ~~~
@@ -143,10 +143,10 @@ Filesystem      Size  Used Avail Use% Mounted on
 ~~~
 {: .output}
 
-Additionally, the disk usage command will tell you how much disk space your files are using within a given directory:
+Additionally, the disk usage command will tell you how much disk space a directory is using:
 
 ~~~
-du -hsx ~
+$ du -hsx ~
 ~~~
 {: .bash}
 ~~~
@@ -154,6 +154,18 @@ du -hsx ~
 ~~~
 {: .output}
 
+To see the disk usage of a particular file, additional options to ~ls~ will help.  The ~-l~ option provides a long format listing and the ~-h~ option again provides disk space in human readable units:
+
+~~~
+$ ls -lh run_simulation
+~~~
+{: .bash}
+~~~
+-rwxrwxr-x 1 ryantaylor ryantaylor 14K Aug 30 15:52 run_simulation
+~~~
+{: .output}
+
+This form of `ls` provides more information than we will address here.  We are looking only for the size of the file, which is just before the date - 14 kilobytes in this example.
 
 ## Playing nicely with other users
 
