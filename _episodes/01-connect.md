@@ -101,6 +101,17 @@ server$ exit
 
 To do this yourself, you would need to replace "jane" with your username, and "192.0.2.5" with your IP address. The ~ at the end of the command is short hand for our home directory.
 
+## Downloading files from webpages
+
+If you have a direct link to a web file, then you can also just directly download it to the server.  The command to do this is called `wget`.  So instead of downloading the data.zip file to your own computer and then copying it to the server:
+
+~~~
+server$ wget {{ site.rcs_pages }}/remote-access/data/data.zip
+~~~
+{: .bash}
+
+As mentioned, this requires less steps so it is easier and faster - you aren't copying the file twice.  Working with large data files won't take up space on your own computer, plus the network connection to the server may be faster than home internet or wireless.
+
 > ## Connect to a server
 > If Jane wants to connect to her favourite RCDC server with address 192.0.2.5, which command should she use?
 > 
