@@ -17,9 +17,9 @@ keypoints:
 
 We will be talking about permissions on Linux files and directories.  These permissions allow you to decide who can access your data.  Perhaps you want to have all your files restricted so only you can access them. Or you can choose to share certain files and directories with your colleagues.
 
-We have already seen how to connect to a remote Linux computer using ssh.  Each of us has our own username and password to do so - Linux computers have more than one user account.  One set of permissions is affiliated with a file's user.
+We have already seen how to connect to a remote Linux computer using ssh.  Each of us has our own username and password to do so - Linux computers have more than one user account.
 
-Users are also collected into groups.  All users are in one primary group and can optionally be in other groups as well.  Some Linux systems have a primary group per user.  Other systems may have one primary group shared for all users.  There is another set of permissions affiliated with a file's group.
+Users are also collected into groups.  All users are in one primary group and can optionally be in other groups as well.  Some Linux systems have a primary group per user.  Other systems may have one primary group shared for all users.
 
 ## Performing Administrative Tasks
 
@@ -28,7 +28,7 @@ When we talk about users and groups, we are starting to touch upon system admini
 Linux has a special user called `root`.  The root user can do anything to the operating system and so root is used to modify computer settings. On many types of Linux, you can run configuration commands as root using the `sudo` command.  If you put `sudo` at the start of a shell command, that command will run as the administrative `root` user.
 
 > ## Dangers of `sudo`
-> It is a good idea to avoid `sudo` unless you are already accustomed to using it.  Commands run with `sudo` could cause problems not just for your own user account and files, but for everybody on the Linux system.
+> It is a good idea to avoid `sudo` unless you are already accustomed to using it.  Commands that run using `sudo` could cause problems not just for your own user account and files, but for everybody on the Linux system.
 {: .callout }
 
 You may recall that the `whoami` command tells you your username:
@@ -43,7 +43,7 @@ jane
 {: .output }
 
 
-If we use `sudo` to run this same command, then we do see that the `sudo` runs our `whoami` commands as the root user:
+If we use `sudo` to run this same command, we do see that `sudo` runs our `whoami` command as the root user:
 
 ~~~
 $ sudo whoami
@@ -65,19 +65,21 @@ $ ls -lh data.zip
 ~~~
 {: .bash }
 ~~~
--rw-rw-r-- 1 jane jane 5.2K Aug 31 11:20 data.zip
+-rw-rw-r-- 1 jane researchers 5.2K Aug 31 11:20 data.zip
 ~~~
 {: .output }
+
+In this example, the data.zip file is owned by user `jane` and group `researchers`.
 
 To change the user and group of a file, one needs to use the chown command.  The user and then group are separated by a colon:
 
 ~~~
-$ sudo chown root:root data.zip
+$ sudo chown root:reseachers data.zip
 # ls -lh data.zip
 ~~~
 {: .bash }
 ~~~
--rw-rw-r-- 1 root root 5.2K Aug 31 11:20 data.zip
+-rw-rw-r-- 1 root researchers 5.2K Aug 31 11:20 data.zip
 ~~~
 {: .output }
 
@@ -91,10 +93,10 @@ $ ls -lh
 ~~~
 {: .bash }
 ~~~
-total 28K
--rw-rw-r-- 1 jane jane 5.2K Aug 31 11:20 data.zip
-drwxrwxr-x 2 jane jane 4.0K Sep  5 11:03 Desktop
--rwx------ 1 jane jane  14K Aug 30 15:52 run_simulation
+total 23K
+-rw-rw-r-- 1 jane researchers 5.2K Aug 31 11:20 data.zip
+drwxrwxr-x 2 jane researchers 4.0K Sep  5 11:03 Desktop
+-rwx------ 1 jane researchers  14K Aug 30 15:52 run_simulation
 ~~~
 {: .output }
 
@@ -102,19 +104,19 @@ Permissions for a file are listed at the start of `ls` in 10 characters.  The fi
 
 ![File Permissions](../fig/permissions.svg)
 
-The file permissions are `rwx`, where:
+The following 9 characters are grouped into `rwx` permissions for each of the three user roles.  The file permissions are `rwx`, where:
  - The **r**ead permission on a file allows you to view the data in the file
  - The **w**rite permission on a file allows you to modify or delete the file
  - The e**x**ecute permission on a file allows you to run the file (assumes the file is a program or shell script)
 
-The following 9 characters are grouped into `rwx` permissions for each of the three user roles:
+And the three user roles are:
  - The **u**ser is the person who owns the file, usually the file's creator
  - The **g**roup is the group of users associated with the file
  - Finally **o**ther specifies anybody else who isn't the file's user or in the file's group
 
-In the output of `ls`, when a permission is shown as `-`, the particular file does not have that particular permission.
+In the output of `ls`, when a permission is shown as `-`, the file does not have that particular permission.
 
-For example, in the preceding `ls -lh` output we see that `data.zip` has permissions `-rw-rw-r--`.  The first `-` means that we are looking at a file.  The next `rw-` means that the user `jane` can view or modify this file, but not execute it.  This makes sense, since it is Jane's file, and it is not a program that could be run.  Similarly, anybody in the group `jane` can read or modify the file.  All other users on this Linux computer could read but not change the file due to the `r--` permissions for other.
+For example, in the preceding `ls -lh` output we see that `data.zip` has permissions `-rw-rw-r--`.  The first `-` means that we are looking at a file.  The next `rw-` means that the user `jane` can view or modify this file, but not execute it.  This makes sense, since it is Jane's file, and it is not a program that could be run.  Similarly, anybody in the group `jane` can read or modify the file.  All other users on this Linux computer can read but not change the file due to the the permissions for other users: `r--`.
 
 ## Directory Permissions
 
@@ -123,7 +125,7 @@ Directories have the same three permissions: read, write, and execute.  However,
 The directory permissions are `rwx`, where:
  - The **r**ead permission on a directory allows you to run `ls` to list the files in that directory
  - The **w**rite permission on a directory allows you to create or delete files in the directory
- - The e**x**ecute permission on a file allows you get to the files and directories inside.
+ - The e**x**ecute permission on a file allows you get to the directories and files in the directory.
 
 Let's look at the `ls` output again:
 
@@ -133,9 +135,9 @@ $ ls -lh
 {: .bash }
 ~~~
 total 28K
--rw-rw-r-- 1 jane jane        5.2K Aug 31 11:20 data.zip
+-rw-rw-r-- 1 jane researchers 5.2K Aug 31 11:20 data.zip
 drwxr-x--x 2 jane researchers 4.0K Sep  5 11:03 Desktop
--rwx------ 1 jane jane         14K Aug 30 15:52 run_simulation
+-rwx------ 1 jane researchers  14K Aug 30 15:52 run_simulation
 ~~~
 {: .output }
 
@@ -163,7 +165,7 @@ bash: ./mycommands: Permission denied
 ~~~
 {: .output }
 
-The `u+x` will add allow the user to execute this file:
+The `u+x` will allow the user to execute this file:
 
 ~~~
 chmod u+x run_simulation
@@ -254,7 +256,7 @@ chmod u+x run_simulation
 >  1. The user `alice`, who is not in the `researchers` group?
 >
 >> ## Solution
->> 1. Jane can see the program with ls and change the mysim, but she cannot run it.
+>> 1. Jane can see the program with ls and change the mysim file, but she cannot run it.
 >> 1. Bob cannot use `ls` to see that the program exists, but he can run the program `somestuff/mysim`.
 >> 1. Alice can see the program exists by using `ls`, but she cannot run the program.
 > {: .solution }
