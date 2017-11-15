@@ -10,7 +10,7 @@ keypoints:
 - The `chown` command controls file user and group ownership
 - The `chmod` command controls file permissions
 - Permissions exist for read, write, and execute
-- Permission apply to user, group, and other
+- Permissions apply to user, group, and other
 ---
 
 ## Users and Groups
@@ -219,7 +219,7 @@ chmod u+x run_simulation
 > -rw-r--r-- 1 jane researchers  12K Sep 13 10:33 confidential.txt
 > ~~~
 > {: .output }
-> `chmod` commands would change this file's permissions so only your
+> What `chmod` commands would change this file's permissions so only your
 > user can view the file?
 >
 > > ## Solution
