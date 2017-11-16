@@ -154,7 +154,7 @@ $ du -hsx ~
 ~~~
 {: .output}
 
-To see the disk usage of a particular file, additional options to ~ls~ will help.  The ~-l~ option provides a long format listing and the ~-h~ option again provides disk space in human readable units:
+To see the disk usage of a particular file, additional options to `ls` will help.  The `-l` option provides a long format listing and the `-h` option again provides disk space in human readable units:
 
 ~~~
 $ ls -lh run_simulation
