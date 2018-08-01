@@ -84,7 +84,7 @@ local$ scp <remote-user-name>@<remote-computer-IP>:<remote-path/remote-file> <lo
 You can also copy entire directories, including all their contents, by adding the `-r` flag:
 
 ~~~
-local$ scp <remote-user-name>@<remote-computer-IP>:<remote-path> <local-path>
+local$ scp -r <remote-user-name>@<remote-computer-IP>:<remote-path> <local-path>
 ~~~
 {: .bash}
 
