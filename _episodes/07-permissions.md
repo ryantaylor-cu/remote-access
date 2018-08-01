@@ -125,7 +125,7 @@ Directories have the same three permissions: read, write, and execute.  However,
 The directory permissions are `rwx`, where:
  - The **r**ead permission on a directory allows you to run `ls` to list the files in that directory
  - The **w**rite permission on a directory allows you to create or delete files in the directory
- - The e**x**ecute permission on a file allows you get to the directories and files in the directory.
+ - The e**x**ecute permission on a directory allows you to get the directories and files in the directory.
 
 Let's look at the `ls` output again:
 
