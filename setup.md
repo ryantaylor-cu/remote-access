@@ -4,36 +4,30 @@ title: Setup
 permalink: /setup/
 ---
 
-First you will need to download some data that will be used throughout the lesson. The zip file you will need can be found [here]({{ page.root }}/data/data.zip). To be able to participate in this lesson you will need to install some software to be able to connect the the RCDC. 
+We ask you to bring a laptop to this workshop.  Depending on the operating system on your laptop you will have to do certain things to be able to fully participate in the lesson. Please follow the instructions that pertain to you.
 
-To be able to participate in this lesson you will need to install some software to be able to connect the the RCDC. 
+## Windows 10 Users
 
+ 1. [Download workshop data]({{ page.root }}/data/data.zip)
+ 2. When off-campus or CU-Wireless, use [Carleton's Cisco VPN for Windows 10](https://carleton.ca/its/help-centre/remote-access/vpn-for-windows-10/)
+ 3. Install [MobaXterm Home Edition](http://mobaxterm.mobatek.net/download.html)
+    - Recommend the "Installer edition" (green button)
+    - Unzip the MobaXterm Installer ZIP before running the MSI installer file
+ 4. In MobaXterm: Click *Start Local terminal* button in the centre of the MobaXterm window
 
-### Connecting to Carleton's VPN
+## Mac Users
 
-To be able to connect to the RCDC from your laptop (using wifi) or from outside of campus, you will need to connect to Carleton's VPN. Full instructions on how to do this can be found [here](https://carleton.ca/its/help-centre/remote-access/). 
+ 1. [Download workshop data]({{ page.root }}/data/data.zip)
+ 2. When off-campus or on CU-Wireless, use [Carleton VPN for Mac OSX](https://carleton.ca/its/help-centre/remote-access/vpn-for-mac-osx/) 
+ 3. To enable graphical Linux applications, [install XQuartz](https://support.apple.com/en-ca/HT201341).
+ 4. Open the Terminal app from Applications/Utilities
+ 
+## Linux Users
 
-
-### Preparing your computer to connect to the RCDC
-
-Depending on the operating system on your computer you will have to do certain things to be able to fully participate in the lesson. Please follow the instructions that pertain to you.
-
-
-#### Windows 10 Users
-
-To be able to participate in this lesson we will need you to install some software to give you access to a command shell. MobaXTerm is a powerful terminal program for Windows. It allows you to use Linux commands on a Windows PC, to remotely connect your RCDC Virtual Machine (VM), transfer files, and even to remotely run graphical programs on your VM. The free Home Edition of MobaXterm can be found [here](http://mobaxterm.mobatek.net/download.html).
-
-Once you have installed MobaXTerm, run the program. In the top left corner click Sesson and then click the big button in the middle that reads "Start local terminal". Once you have gotten to this point you are ready to participate in the lesson.
-
-#### Mac Users
-
-To be able to run programs using Graphical User Interfaces (GUIs), you will need to have X11 installed on your Mac. Information about this, including instructions to download and install it, can be found [here](https://support.apple.com/en-ca/HT201341). 
-
-Once you have installed X11, you will need to open a terminal window. To do this, navigate to Applications/Utilities and open Terminal. Once you have reached this stage you are ready to participate in the lesson. 
-
-#### Linux Users
-
-To be able to participate in this lesson we will only need you to open a terminal window. If you do not know how to do this, either email your instructor before the lesson starts or ask when you arrive.
+The instructions for Linux depend on your Linux distribution and setup.  You will need to follow these general steps:
+ 1. [Download workshop data]({{ page.root }}/data/data.zip)
+ 2. When off-campus or on CU-Wireless, use [Carleton VPN for Linux](https://carleton.ca/its/help-centre/remote-access/cisco-anyconnect-secure-mobility-client-for-linux/)
+ 3. Open your Linux version's Terminal application
 
 
 
