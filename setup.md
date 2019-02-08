@@ -4,7 +4,7 @@ title: Setup
 permalink: /setup/
 ---
 
-We ask you to bring a laptop to this workshop.  Depending on the operating system on your laptop you will have to do certain things to be able to fully participate in the lesson. Please follow the instructions that pertain to you.
+We ask that you bring a laptop to this workshop.  Depending on the operating system on your laptop you will have to do certain things to be able to fully participate in the lesson. Please follow the instructions that apply to your laptop.
 
 ## Windows 10 Users
 
