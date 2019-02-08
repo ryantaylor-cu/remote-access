@@ -11,7 +11,7 @@ We ask that you bring a laptop to this workshop.  Depending on the operating sys
  1. [Download workshop data]({{ page.root }}/data/data.zip).  Move the data.zip file to your Desktop.
  2. When off-campus or CU-Wireless, use [Carleton's Cisco VPN for Windows 10](https://carleton.ca/its/help-centre/remote-access/vpn-for-windows-10/)
  3. Install [MobaXterm Home Edition](http://mobaxterm.mobatek.net/download.html)
-    - Recommend the "Installer edition" (green button)
+    - We recommend the "Installer edition" (green button)
     - Unzip the MobaXterm Installer ZIP before running the MSI installer file
  4. In MobaXterm: Click *Start Local terminal* button in the centre of the MobaXterm window
 
