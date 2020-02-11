@@ -131,7 +131,7 @@ $ tsp -C
 
 Kill a running job with ID 2:
 ~~~
-$ kill $(tsp -p 2)
+$ tsp -k 2
 ~~~
 {: .bash}
 
