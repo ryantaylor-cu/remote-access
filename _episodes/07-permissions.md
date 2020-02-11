@@ -257,7 +257,7 @@ chmod u+x run_simulation
 >
 >> ## Solution
 >> 1. Jane can see the program with ls and change the mysim file, but she cannot run it.
->> 1. Bob cannot use `ls` to see that the program exists, but he can run the program `somestuff/mysim`.
->> 1. Alice can see the program exists by using `ls`, but she cannot run the program.
+>> 1. Bob can see that the program exists by using `ls`, but he cannot run the program.
+>> 1. Alice cannot use `ls` to see that the program exists, but she can run the program `somestuff/mysim`.
 > {: .solution }
 {: .challenge }
