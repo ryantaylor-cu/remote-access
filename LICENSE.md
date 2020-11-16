@@ -5,9 +5,12 @@ root: .
 ---
 ## Instructional Material
 
-All Software Carpentry, Data Carpentry, and Library Carpentry instructional material is
-made available under the [Creative Commons Attribution
-license][cc-by-human]. The following is a human-readable summary of
+This instructional material is made available under the [Creative
+Commons Attribution license][cc-by-human].  The website template and
+possibly some website content is derived from
+[Software Carpentry](http://software-carpentry.org/).
+
+The following is a human-readable summary of
 (and not a substitute for) the [full legal text of the CC BY 4.0
 license][cc-by-legal].
 
@@ -24,8 +27,8 @@ license terms.
 Under the following terms:
 
 * **Attribution**---You must give appropriate credit (mentioning that
-  your work is derived from work that is Copyright © Software
-  Carpentry and, where practical, linking to
+  your work is derived from work that is derived from Copyright ©
+  Software Carpentry and, where practical, linking to
   http://software-carpentry.org/), provide a [link to the
   license][cc-by-human], and indicate if changes were made. You may do
   so in any reasonable manner, but not in any way that suggests the
@@ -48,9 +51,9 @@ Notices:
 ## Software
 
 Except where otherwise noted, the example programs and other software
-provided by Software Carpentry and Data Carpentry are made available under the
-[OSI][osi]-approved
-[MIT license][mit-license].
+included in these instructional materials or otherwise provided by
+Software Carpentry and Data Carpentry are made available under the
+[OSI][osi]-approved [MIT license][mit-license].
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
